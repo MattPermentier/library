@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/utm3rzx.css" />
+    <title>Library</title>
+  </head>
+  <body>
+    <!-- <header> -->
+    <!-- <h1>library</h1> -->
+    <!-- </header> -->
+    <main>
+      <!-- <button id="addBook">+ Add book</button> -->
+
+      <section id="form">
+        <form id="bookInfo" action="">
+          <h2 id="infoHeader">Add new book</h2>
+          <input
+            type="text"
+            class="formInput"
+            id="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            class="formInput"
+            id="author"
+            placeholder="Author"
+            required
+          />
+          <input
+            type="number"
+            class="formInput"
+            id="pages"
+            placeholder="Pages"
+            required
+          />
+          <div id="checkboxDiv">
+            <p id="checkboxTxt">Have you read it?</p>
+            <input type="checkbox" id="checkbox" class="!checked" />
+          </div>
+          <button id="submitBtn">Submit</button>
+        </form>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
