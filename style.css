@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100vw;
+  height: 150px;
+  background-color: #fffbfb;
+
+  font-family: poppins, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#addBook {
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2em;
+
+  height: 80px;
+  width: 250px;
+  margin-top: 2em;
+  border: transparent;
+}
+
+#addBook:hover {
+  background-color: #d7d7d7;
+  height: 80px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+main {
+  background-color: #f0eef1;
+  height: 100vh;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+
+#bookInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0eef1;
+  border-radius: 10px;
+  height: 450px;
+  width: 350px;
+}
+
+#infoHeader {
+  font-family: poppins, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3em;
+  margin: 15px;
+}
+
+.formInput {
+  border: transparent;
+  margin: 15px;
+  width: 320px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 1.3em;
+}
+
+.formInput::placeholder {
+  padding-left: 15px;
+}
+
+#checkboxDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+#checkboxTxt {
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.125em;
+}
+
+#checkbox {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+  border: 1px solid black;
+}
+
+#submitBtn {
+  width: 320px;
+  height: 50px;
+  border-radius: 10px;
+  border: transparent;
+  background-color: #9fff9c;
+
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.125em;
+}
