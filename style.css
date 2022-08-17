@@ -4,10 +4,12 @@
 }
 
 header {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
   width: 100vw;
   height: 150px;
   background-color: #fffbfb;
-
   font-family: poppins, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -17,6 +19,9 @@ header {
 main {
   display: flex;
   justify-content: center;
+  background-color: #f0eef1;
+  height: 100vh;
+  width: 100vw;
 }
 
 #addBook {
@@ -24,7 +29,6 @@ main {
   font-weight: 600;
   font-style: normal;
   font-size: 2em;
-
   height: 80px;
   width: 250px;
   margin-top: 2em;
@@ -38,30 +42,18 @@ main {
   border-radius: 10px;
 }
 
-main {
-  background-color: #f0eef1;
-  height: 100vh;
-}
-
-#form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* display: none; */
-}
-
-#bookInfo {
+#formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f0eef1;
-  border-radius: 10px;
   height: 450px;
   width: 350px;
+  background-color: #f0eef1;
+  border-radius: 10px;
 }
 
-#infoHeader {
+#formHeader {
   font-family: poppins, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -82,7 +74,12 @@ main {
   padding-left: 15px;
 }
 
-#checkboxDiv {
+.formInput:focus {
+  border: transparent;
+  outline: none;
+}
+
+#checkboxContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +106,6 @@ main {
   border-radius: 10px;
   border: transparent;
   background-color: #9fff9c;
-
   font-family: poppins, sans-serif;
   font-weight: 500;
   font-style: normal;
