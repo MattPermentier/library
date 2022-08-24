@@ -3,25 +3,33 @@
   padding: 0;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0eef1;
+}
+
 header {
   display: flex;
   align-items: center;
-  margin-left: 20px;
   width: 100vw;
-  height: 150px;
+  height: 95px;
   background-color: #fffbfb;
   font-family: poppins, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
-main {
+h1 {
+  margin-left: 20px;
+}
+
+#addBookSection {
   display: flex;
   justify-content: center;
-  background-color: #f0eef1;
-  height: 100vh;
   width: 100vw;
+  height: 150px;
 }
 
 #addBook {
@@ -31,7 +39,7 @@ main {
   font-size: 2em;
   height: 80px;
   width: 250px;
-  margin-top: 2em;
+  margin-top: 1em;
   border: transparent;
 }
 
@@ -43,17 +51,26 @@ main {
 }
 
 #formContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 10;
   height: 450px;
   width: 350px;
   background-color: #f0eef1;
   border-radius: 10px;
 }
 
+#formContainer.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 #formHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: poppins, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -101,8 +118,12 @@ main {
 }
 
 #submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 320px;
   height: 50px;
+  margin: 15px;
   border-radius: 10px;
   border: transparent;
   background-color: #9fff9c;
@@ -110,4 +131,71 @@ main {
   font-weight: 500;
   font-style: normal;
   font-size: 1.125em;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#showBooks {
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+}
+
+#allBooks {
+  display: flex;
+}
+
+.libraryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffbfb;
+  width: 320px;
+  height: 295px;
+  margin-left: 40px;
+  border-radius: 10px;
+}
+
+.bookInfo {
+  font-family: poppins, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.25em;
+  margin: 10px;
+}
+
+.notRead {
+  background-color: #ff9c9c;
+}
+
+.read {
+  background-color: #9fff9c;
+}
+
+.removeBtn {
+  background-color: #efefef;
+}
+
+.readBtn,
+.removeBtn {
+  width: 280px;
+  height: 50px;
+  border: transparent;
+  border-radius: 10px;
 }
