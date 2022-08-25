@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -151,13 +152,14 @@ h1 {
 }
 
 #showBooks {
-  display: flex;
-  overflow: hidden;
   width: 100vw;
 }
 
 #allBooks {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin: 40px;
 }
 
 .libraryContainer {
@@ -166,7 +168,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: #fffbfb;
-  width: 320px;
+  width: 270px;
   height: 295px;
   margin-left: 40px;
   border-radius: 10px;
@@ -194,7 +196,7 @@ h1 {
 
 .readBtn,
 .removeBtn {
-  width: 280px;
+  width: 250px;
   height: 50px;
   border: transparent;
   border-radius: 10px;
