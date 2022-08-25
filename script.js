@@ -8,14 +8,15 @@ let overlay = document.getElementById('overlay');
 let body = document.getElementById('body');
 let submitBtn = document.getElementById('submitBtn');
 let allBooks = document.getElementById('allBooks');
+let books = document.getElementById('showBooks');
 
 let readButton;
-
 // event listeners
 submitBtn.addEventListener('click', addBookToLibrary);
 addBook.addEventListener('click', openForm);
 body.addEventListener('click', closeForm);
 
+// array to save all books in
 let myLibrary = [];
 
 // constructor function
@@ -37,41 +38,47 @@ function addBookToLibrary(e) {
 }
 let removeButton;
 
+// loop throught the array with all books
 function showBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
-    let libraryContainer = document.createElement('div');
-    libraryContainer.classList.add('libraryContainer');
-    // title of book
-    let bookTitle = document.createElement('p');
-    bookTitle.classList.add('bookInfo');
-    bookTitle.innerHTML = `"${myLibrary[i].title}"`;
-    libraryContainer.appendChild(bookTitle);
-    // author of book
-    let bookAuthor = document.createElement('p');
-    bookAuthor.classList.add('bookInfo');
-    bookAuthor.innerHTML = myLibrary[i].author;
-    libraryContainer.appendChild(bookAuthor);
-    // amount of pages
-    let bookPages = document.createElement('p');
-    bookPages.classList.add('bookInfo');
-    bookPages.innerHTML = `${myLibrary[i].pages} pages`;
-    libraryContainer.appendChild(bookPages);
-    // read button
-    readButton = document.createElement('button');
-    readButton.classList.add('bookInfo');
-    readButton.classList.add('readBtn');
-    libraryContainer.appendChild(readButton);
-    readStatus(i);
-    // remove button
-    removeButton = document.createElement('button');
-    removeButton.classList.add('bookInfo');
-    removeButton.classList.add('removeBtn');
-    removeButton.id = i;
-    removeButton.innerHTML = 'Remove';
-    libraryContainer.appendChild(removeButton);
-    // add all the info to the html div
-    allBooks.appendChild(libraryContainer);
+    saveBooks(i);
   }
+}
+
+// create the cards with book information
+function saveBooks(i) {
+  let libraryContainer = document.createElement('div');
+  libraryContainer.classList.add('libraryContainer');
+  // title of book
+  let bookTitle = document.createElement('p');
+  bookTitle.classList.add('bookInfo');
+  bookTitle.innerHTML = `"${myLibrary[i].title}"`;
+  libraryContainer.appendChild(bookTitle);
+  // author of book
+  let bookAuthor = document.createElement('p');
+  bookAuthor.classList.add('bookInfo');
+  bookAuthor.innerHTML = myLibrary[i].author;
+  libraryContainer.appendChild(bookAuthor);
+  // amount of pages
+  let bookPages = document.createElement('p');
+  bookPages.classList.add('bookInfo');
+  bookPages.innerHTML = `${myLibrary[i].pages} pages`;
+  libraryContainer.appendChild(bookPages);
+  // read button
+  readButton = document.createElement('button');
+  readButton.classList.add('bookInfo');
+  readButton.classList.add('readBtn');
+  libraryContainer.appendChild(readButton);
+  readStatus(i);
+  // remove button
+  removeButton = document.createElement('button');
+  removeButton.classList.add('bookInfo');
+  removeButton.classList.add('removeBtn');
+  removeButton.id = i;
+  removeButton.innerHTML = 'Remove';
+  libraryContainer.appendChild(removeButton);
+  // add all the info to the html div
+  allBooks.appendChild(libraryContainer);
 }
 
 // check if checkbox is checked
@@ -83,6 +90,7 @@ function isChecked() {
   }
 }
 
+// decide wheter read or not using checkbox value
 function readStatus(num) {
   if (myLibrary[num].read === true) {
     readButton.classList.remove('notRead');
@@ -114,6 +122,7 @@ function changeReadStatus() {
 }
 changeReadStatus();
 
+// delete a book when clicked on remove button
 function deleteBook() {
   document.addEventListener('click', (e) => {
     let target = e.target;
