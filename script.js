@@ -10,7 +10,9 @@ let submitBtn = document.getElementById('submitBtn');
 let allBooks = document.getElementById('allBooks');
 let books = document.getElementById('showBooks');
 
+// global variables
 let readButton;
+
 // event listeners
 submitBtn.addEventListener('click', addBookToLibrary);
 addBook.addEventListener('click', openForm);
